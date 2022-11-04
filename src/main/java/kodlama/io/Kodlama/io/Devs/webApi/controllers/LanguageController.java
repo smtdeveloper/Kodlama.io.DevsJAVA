@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.Kodlama.io.Devs.business.absracts.LanguageService;
+import kodlama.io.Kodlama.io.Devs.business.requests.LanguageRequest;
+import kodlama.io.Kodlama.io.Devs.business.responses.LanguageResponse;
 import kodlama.io.Kodlama.io.Devs.entities.conretes.Language;
 
 @RestController
@@ -27,23 +29,23 @@ public class LanguageController {
 		this.languageService = languageService;
 	}
 
-	@GetMapping("/")
-	public List<Language> getAll() {
+	@GetMapping("/getall")
+	public List<LanguageResponse> getAll() {
 		return languageService.getAll();
 	}
 
 	@GetMapping("/{id}")
-	public Language getById(@PathVariable int id) {
-		return languageService.getById(id);
+	public LanguageResponse getById(@PathVariable int id) {
+		return languageService.getResponseById(id);
 	}
 
-	@PostMapping("/")
-	public void add(@RequestBody Language language) {
+	@PostMapping("/add")
+	public void add(@RequestBody LanguageRequest language) throws Exception {
 		languageService.add(language);
 	}
 
 	@PutMapping("/{id}")
-	public void update(@RequestBody Language language, @PathVariable int id) {
+	public void update(@RequestBody LanguageRequest language, @PathVariable int id) throws Exception {
 		languageService.update(language, id);
 
 	}
