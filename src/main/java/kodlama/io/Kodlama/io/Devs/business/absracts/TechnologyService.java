@@ -9,7 +9,6 @@ public interface TechnologyService {
 
 	public List<TechnologyResponse> getAll();
 	public TechnologyResponse getResponseById(int id);
-	public List<TechnologyResponse> getLanguageByIdList(int id);
 	
 	public void add(TechnologyRequest request);
 	public void update(TechnologyRequest request, int id);

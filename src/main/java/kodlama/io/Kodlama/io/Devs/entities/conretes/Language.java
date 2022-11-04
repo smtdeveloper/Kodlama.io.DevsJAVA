@@ -3,6 +3,7 @@ package kodlama.io.Kodlama.io.Devs.entities.conretes;
 
 import java.util.Set;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,12 +18,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "languages")
-@Entity
 public class Language {
 
 	@Id
@@ -33,7 +35,7 @@ public class Language {
 	@Column(name="name")
 	private String name;
 	
-	@OneToMany(mappedBy = "Language", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
     Set<Technology> technologies;
 	
 	

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.Kodlama.io.Devs.business.absracts.TechnologyService;
 import kodlama.io.Kodlama.io.Devs.business.requests.TechnologyRequest;
-import kodlama.io.Kodlama.io.Devs.business.responses.LanguageResponse;
 import kodlama.io.Kodlama.io.Devs.business.responses.TechnologyResponse;
 
 @RestController
@@ -37,10 +36,6 @@ public class TechnologiesController {
 		return technologyService.getResponseById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public List<TechnologyResponse> getLanguageByIdList(@PathVariable int id) {
-		return technologyService.getLanguageByIdList(id);
-	}
 	
 	@PostMapping("/add")
     public void add(@RequestBody TechnologyRequest technologyRequest){

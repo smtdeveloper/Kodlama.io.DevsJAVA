@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.io.Kodlama.io.Devs.business.absracts.LanguageService;
 import kodlama.io.Kodlama.io.Devs.business.requests.LanguageRequest;
 import kodlama.io.Kodlama.io.Devs.business.responses.LanguageResponse;
-import kodlama.io.Kodlama.io.Devs.entities.conretes.Language;
 
 @RestController
 @RequestMapping("/api/languages")

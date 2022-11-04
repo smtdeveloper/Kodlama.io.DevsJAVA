@@ -3,6 +3,8 @@ package kodlama.io.Kodlama.io.Devs.business.concretes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import kodlama.io.Kodlama.io.Devs.business.absracts.LanguageService;
 import kodlama.io.Kodlama.io.Devs.business.absracts.TechnologyService;
 import kodlama.io.Kodlama.io.Devs.business.requests.TechnologyRequest;
@@ -11,6 +13,7 @@ import kodlama.io.Kodlama.io.Devs.dataAccess.absracts.TechnologyRepository;
 import kodlama.io.Kodlama.io.Devs.entities.conretes.Language;
 import kodlama.io.Kodlama.io.Devs.entities.conretes.Technology;
 
+@Service
 public class TechnologyManager implements TechnologyService {
 
 	private TechnologyRepository technologyRepository;
@@ -88,29 +91,6 @@ public class TechnologyManager implements TechnologyService {
 
 	}
 
-	@Override
-	public List<TechnologyResponse> getLanguageByIdList(int id) {
 
-		List<Technology> technologies = technologyRepository.findAll();
-		List<TechnologyResponse> responses = new ArrayList<>();
-
-		for (Technology technology : technologies) {
-
-			if (technology.getLanguage().getId() == id) {
-				TechnologyResponse technologyResponse = new TechnologyResponse();
-
-				technologyResponse.setName(technology.getName());
-				technologyResponse.setLanguageId(technology.getLanguage().getId());
-				technologyResponse.setId(technology.getId());
-				technologyResponse.setLanguageName(technology.getLanguage().getName());
-
-				responses.add(technologyResponse);
-			}
-
-		}
-
-		return responses;
-
-	}
 
 }
